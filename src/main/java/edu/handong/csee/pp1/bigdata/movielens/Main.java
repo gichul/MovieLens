@@ -30,7 +30,7 @@ class Main
 		options.addOption("h", "help", false, "show help message") ;
 
 		// (2) Prepare for a parser for the options
-		//     CommandLineParser class is also from an external library "Apache commons CLI"
+		//     CommandLineParser class is also from an external li-rary "Apache commons CLI"
 		//     parsing options from command line when executing a program.
 		CommandLineParser parser = new DefaultParser() ;
 		CommandLine cmd = null ; // An object of the CommandLine class is actually processing command line options.
