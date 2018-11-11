@@ -283,34 +283,40 @@ class FrequentItemsetSize3 implements Comparable
 
 	FrequentItemsetSize3(Set<Integer> s) {
 		/* TODO: implement this method */
-		Integer [] elem = s.toArray(new Integer[2]) ;
+		Integer [] elem = s.toArray(new Integer[3]) ;
 		// order item ids!
 		if (elem[0] < elem[1]) {
-			this.items[0] = elem[0] ;
-			this.items[1] = elem[1] ;
+			if(elem[1]<elem[2]) {
+				this.items[0]=elem[0];
+				this.items[1]=elem[1];
+				this.items[2]=elem[2];
+			}else if(elem[0]<elem[2]){
+				this.items[0]=elem[0];
+				this.items[1]=elem[2];
+				this.items[2]=elem[1];
+			}else {
+				this.items[0]=elem[2];
+				this.items[1]=elem[0];
+				this.items[2]=elem[1];
+			}
+
+		}else {
+			if(elem[0]<elem[2]) {
+				this.items[0]=elem[1];
+				this.items[1]=elem[0];
+				this.items[2]=elem[2];
+			}else if(elem[1]<elem[2]){
+				this.items[0]=elem[1];
+				this.items[1]=elem[2];
+				this.items[2]=elem[0];
+			}else {
+				this.items[1]=elem[2];
+				this.items[1]=elem[1];
+				this.items[2]=elem[0];
+			}
 		}
-		else {
-			this.items[0] = elem[1] ;
-			this.items[1] = elem[0] ;
-		}
-		
-		if (elem[1] < elem[2]) {
-			this.items[1] = elem[1] ;
-			this.items[2] = elem[2] ;
-		}
-		else {
-			this.items[1] = elem[2] ;
-			this.items[2] = elem[1] ;
-		}
-		
-		if (elem[0] < elem[1]) {
-			this.items[0] = elem[0] ;
-			this.items[1] = elem[1] ;
-		}
-		else {
-			this.items[0] = elem[1] ;
-			this.items[1] = elem[0] ;
-		}
+
+
 		
 		
 		
